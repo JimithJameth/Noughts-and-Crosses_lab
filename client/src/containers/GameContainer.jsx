@@ -15,12 +15,24 @@ class GameContainer extends React.Component {
     this.setValue = this.setValue.bind(this)
   }
 
-  // player needs to be either 'X' or 'O'
-  // needs to take turns
-  // needs to start with 'X'
+  // after each move need to check array
+  // game will end:
+  // 1) array is full i.e. every value is either 'X' or 'O'
+  // 2) wither three O  or X in a row (either vertical, horizontal, diagonal)
+
+
+  // checkGameStatus() {
+  //   const board = this.state.board;
+
+  //   // board.forEach(function(square) {
+  //   //   if (square === "X" || "O") {
+  //   //     this.setState({board: ["", "", "", "", "", "", "", "", ""]})
+  //   //   }
+  //   // });
+  //   console.log(this.state.board);
+  // }
 
   switchPlayer() {
-    // console.log(this.state.player)
     if (this.state.player === 'X') {
     this.setState({player: 'O'})
     }
@@ -33,6 +45,8 @@ class GameContainer extends React.Component {
     newBoard[position] = this.state.player
     this.setState({board: newBoard});
     this.switchPlayer();
+    console.log(this.state.board)
+    // this.checkGameStatus();
   }
 
   render() {
