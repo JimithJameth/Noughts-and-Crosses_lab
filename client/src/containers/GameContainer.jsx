@@ -1,4 +1,6 @@
 import React from 'react'
+import Board from '../components/Board.jsx'
+import Square from '../components/Square.jsx'
 
 class GameContainer extends React.Component {
 
@@ -13,6 +15,7 @@ class GameContainer extends React.Component {
     return(
     <div>
     <h1>Noughts and Crosses</h1>
+    <Board />
     </div>
 
     );
