@@ -2,9 +2,12 @@ import React from 'react';
 import Square from './Square'
 
 class Board extends  React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  renderSquare(num) {
-    return<Square value={num}/>
+  renderSquare(index) {
+    return<Square value={this.props.board[index]} index={index} setValue ={this.props.setValue}/>
   }
 
   render(){
